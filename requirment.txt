@@ -1,0 +1,10 @@
+Ques:
+
+1. do we have to maintain a symbol table also?
+
+
+what to do:
+1. we have to write the EBNF for  each type of expresion/function/loops/if else/
+2.  P1# (double precision), N$ (string), A9 (integer), M! (single precision) {Integer is the default}
+3. KeyWords : NOT, AND, OR, XOR, DATA, DEF FNx, DIM, END, FOR, TO, NEXT, GOSUB, GOTO, IF, THEN, INPUT, PRINT, REM, RETURN, STOP, 
+4. 
