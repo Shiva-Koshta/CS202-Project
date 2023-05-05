@@ -15,9 +15,9 @@
 "*"                     { return TIMES; }
 "/"                     { return DIVIDE; }
 "="                     { return ASSIGN; }
-"if"                    { return IF; }
-"then"                  { return THEN; }
-"else"                  { return ELSE; }
+"IF"                    { return IF; }
+"THEN"                  { return THEN; }
+"ELSE"                  { return ELSE; }
 "{"                     { return LBRACE; }
 "}"                     { return RBRACE; }
 "("                     { return LPAREN; }
