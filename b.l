@@ -8,13 +8,13 @@
 \n                      /* Ignore newlines */
 [0-9]+                  { yylval.num = atoi(yytext); return NUMBER; }
 
-[a-zA-Z_][a-zA-Z0-9_]* \b(?<!if|then|else)\b       { yylval.id = strdup(yytext); return IDENTIFIER; }
+
 
 
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "^"                     {return EXPO;}
-"-"                     {return NEGATION;}
+"~"                     {return NEGATION;}
 "+"                     { return PLUS; }
 "-"                     { return MINUS; }
 "*"                     { return MULTIPLY; }
@@ -25,17 +25,17 @@
 ">"                     { return GREATER; }
 "<="                    { return LESS_EQUAL; }
 ">="                    { return GREATER_EQUAL; }
-"NOT"                    { return NOT; }
-"AND"                    { return AND; }
+"NOT"                   { return NOT; }
+"AND"                   { return AND; }
 "OR"                    { return OR; }
-"XOR"                    { return XOR; }
-"DATA"                    { return DATA; }
+"XOR"                   { return XOR; }
+"DATA"                  { return DATA; }
 "DEF"                    { return DEF; }
 "DIM"                    { return DIM; }
 "END"                    { return END; }
 "FOR"                    { return FOR; }
 "TO"                     {return TO; }
-"STEP"                     {return STEP; }
+"STEP"                   {return STEP; }
 "NEXT"                   {return NEXT; }
 "GOSUB"                  {return GOSUB; }
 "GOTO"                   {return GOTO; }
@@ -46,17 +46,19 @@
 "RETURN"                 {return RETURN; }
 "STOP"                   {return STOP; }
 "SEMICOLON"              {return SEMICOLON; }
-","                      {return COMMA; }
+","                      {return COMMA; printf("JKk");}
 
 "IF"                     {return IF; }
 "THEN"                   {return THEN; }
 "LET"                    {return LET; }
 "INPUT"                  {return INPUT; }
-
-
-.                       { print("Invalidcharacter %c\n", *yytext); }
+.                         { print("Invalidcharacter %c\n", *yytext); }
 %%
 
 int yywrap() {
     return 1;
+}
+
+int main(){
+    yylexer();
 }
