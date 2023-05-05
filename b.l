@@ -1,3 +1,4 @@
+
 %{
 #include "y.tab.h"
 %}
@@ -7,7 +8,7 @@
 \n                      /* Ignore newlines */
 [0-9]+                  { yylval.num = atoi(yytext); return NUMBER; }
 
-[a-zA-Z_][a-zA-Z0-9_]*\b(?<![if|then|else])\b { yylval.id = strdup(yytext); return IDENTIFIER; }
+[a-zA-Z_][a-zA-Z0-9_]* \b(?<!if|then|else)\b       { yylval.id = strdup(yytext); return IDENTIFIER; }
 
 "+"                     { return PLUS; }
 "-"                     { return MINUS; }

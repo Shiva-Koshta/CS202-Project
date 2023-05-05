@@ -1,15 +1,24 @@
 %{
 #include <stdio.h>
-#include <string.h>
 %}
 
 %%
-[a-zA-Z_][a-zA-Z0-9_]*\b(?<!auto|break|case|char|const|continue|default|do|double|else|enum|extern|float|for|goto|if|int|long|register|return|short|signed|sizeof|static|struct|switch|typedef|union|unsigned|void|volatile|while)\b    { printf("Matched variable name: %s\n", yytext); }
-.|\n    {}
+
+^(?![a-z])(?!NUMBER\b|IDENTIFIER\b|NOT\b|AND\b|OR\b|XOR\b|DATA\b|DEF\b|FN\b|DIM\b|END\b|FOR\b|TO\b|NEXT\b|GOSUB\b|GOTO\b|IF\b|THEN\b|INPUT\b|PRINT\b|REM\b|RETURN\b|STOP\b|STEP\b|PLUS\b|MINUS\b|MULTIPLY\b|DIVIDE\b|EQUALS\b|NOT_EQUAL\b|LESS\b|LESS_EQUAL\b|GREATER\b|GREATER_EQUAL\b|COMMA\b|SEMICOLON\b|LPAREN\b|RPAREN\b)\b[a-zA-Z]+\b$     {printf("\nHI\t");}
+
+ 
+[^(NUMBER)] {
+    printf("\nHI\t");
+}
+
+(.|\n)    { /* Ignore all other characters */ }
 
 %%
- 
-int main() {
+int yywrap(){
+    return 1;
+}
+
+int main(void) {
     yylex();
     return 0;
 }
