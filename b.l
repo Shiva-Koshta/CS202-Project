@@ -1,13 +1,23 @@
 
 %{
 #include "y.tab.h"
+#include <stdio.h>
+extern int yylval;
 %}
 
 %%
 [ \t]                   /* Ignore whitespace */
 \n                      /* Ignore newlines */
+<<<<<<< HEAD
 [0-9]+                  { yylval.num = atoi(yytext); return NUMBER; }
 [A-Z]([0-9])?           { yylval.id = strdup(yytext); return IDENTIFIER; }
+=======
+[0-9]+                  { yylval = atoi(yytext); return NUMBER; }
+
+
+
+
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "^"                     {return EXPO;}
@@ -49,13 +59,13 @@
 "THEN"                   {return THEN; }
 "LET"                    {return LET; }
 "INPUT"                  {return INPUT; }
-.                         { print("Invalidcharacter %c\n", *yytext); }
+.                         { printf("Invalidcharacter %c\n", *yytext); }
 %%
 
 int yywrap() {
     return 1;
 }
 
-int main(){
-    yylexer();
-}
+/* int main(){
+    yylex();
+} */

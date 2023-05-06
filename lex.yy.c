@@ -500,9 +500,16 @@ char *yytext;
 #line 1 "test.l"
 #line 3 "test.l"
 #include "y.tab.h"
+<<<<<<< HEAD
 FILE *file;
 #line 505 "lex.yy.c"
 #line 506 "lex.yy.c"
+=======
+#include <stdio.h>
+extern int yylval;
+#line 506 "lex.yy.c"
+#line 507 "lex.yy.c"
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 
 #define INITIAL 0
 
@@ -719,9 +726,15 @@ YY_DECL
 		}
 
 	{
+<<<<<<< HEAD
 #line 7 "test.l"
 
 #line 725 "lex.yy.c"
+=======
+#line 8 "b.l"
+
+#line 726 "lex.yy.c"
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -780,17 +793,26 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 8 "test.l"
+=======
+#line 9 "b.l"
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 /* Ignore whitespace */
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 9 "test.l"
+=======
+#line 10 "b.l"
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 /* Ignore newlines */
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
+<<<<<<< HEAD
 #line 11 "test.l"
 { printf ("NUMBER\n"); }
 	YY_BREAK
@@ -995,6 +1017,212 @@ YY_RULE_SETUP
 ECHO;
 	YY_BREAK
 #line 998 "lex.yy.c"
+=======
+#line 11 "b.l"
+{ yylval = atoi(yytext); return NUMBER; }
+	YY_BREAK
+case 4:
+YY_RULE_SETUP
+#line 16 "b.l"
+{ return LPAREN; }
+	YY_BREAK
+case 5:
+YY_RULE_SETUP
+#line 17 "b.l"
+{ return RPAREN; }
+	YY_BREAK
+case 6:
+YY_RULE_SETUP
+#line 18 "b.l"
+{return EXPO;}
+	YY_BREAK
+case 7:
+YY_RULE_SETUP
+#line 19 "b.l"
+{return NEGATION;}
+	YY_BREAK
+case 8:
+YY_RULE_SETUP
+#line 20 "b.l"
+{ return PLUS; }
+	YY_BREAK
+case 9:
+YY_RULE_SETUP
+#line 21 "b.l"
+{ return MINUS; }
+	YY_BREAK
+case 10:
+YY_RULE_SETUP
+#line 22 "b.l"
+{ return MULTIPLY; }
+	YY_BREAK
+case 11:
+YY_RULE_SETUP
+#line 23 "b.l"
+{ return DIVIDE; }
+	YY_BREAK
+case 12:
+YY_RULE_SETUP
+#line 24 "b.l"
+{ return EQUALS; }
+	YY_BREAK
+case 13:
+YY_RULE_SETUP
+#line 25 "b.l"
+{ return NOT_EQUAL; }
+	YY_BREAK
+case 14:
+YY_RULE_SETUP
+#line 26 "b.l"
+{ return LESS; }
+	YY_BREAK
+case 15:
+YY_RULE_SETUP
+#line 27 "b.l"
+{ return GREATER; }
+	YY_BREAK
+case 16:
+YY_RULE_SETUP
+#line 28 "b.l"
+{ return LESS_EQUAL; }
+	YY_BREAK
+case 17:
+YY_RULE_SETUP
+#line 29 "b.l"
+{ return GREATER_EQUAL; }
+	YY_BREAK
+case 18:
+YY_RULE_SETUP
+#line 30 "b.l"
+{ return NOT; }
+	YY_BREAK
+case 19:
+YY_RULE_SETUP
+#line 31 "b.l"
+{ return AND; }
+	YY_BREAK
+case 20:
+YY_RULE_SETUP
+#line 32 "b.l"
+{ return OR; }
+	YY_BREAK
+case 21:
+YY_RULE_SETUP
+#line 33 "b.l"
+{ return XOR; }
+	YY_BREAK
+case 22:
+YY_RULE_SETUP
+#line 34 "b.l"
+{ return DATA; }
+	YY_BREAK
+case 23:
+YY_RULE_SETUP
+#line 35 "b.l"
+{ return DEF; }
+	YY_BREAK
+case 24:
+YY_RULE_SETUP
+#line 36 "b.l"
+{ return DIM; }
+	YY_BREAK
+case 25:
+YY_RULE_SETUP
+#line 37 "b.l"
+{ return END; }
+	YY_BREAK
+case 26:
+YY_RULE_SETUP
+#line 38 "b.l"
+{ return FOR; }
+	YY_BREAK
+case 27:
+YY_RULE_SETUP
+#line 39 "b.l"
+{return TO; }
+	YY_BREAK
+case 28:
+YY_RULE_SETUP
+#line 40 "b.l"
+{return STEP; }
+	YY_BREAK
+case 29:
+YY_RULE_SETUP
+#line 41 "b.l"
+{return NEXT; }
+	YY_BREAK
+case 30:
+YY_RULE_SETUP
+#line 42 "b.l"
+{return GOSUB; }
+	YY_BREAK
+case 31:
+YY_RULE_SETUP
+#line 43 "b.l"
+{return GOTO; }
+	YY_BREAK
+case 32:
+YY_RULE_SETUP
+#line 46 "b.l"
+{return PRINT; }
+	YY_BREAK
+case 33:
+YY_RULE_SETUP
+#line 47 "b.l"
+{return REM; }
+	YY_BREAK
+case 34:
+YY_RULE_SETUP
+#line 48 "b.l"
+{return RETURN; }
+	YY_BREAK
+case 35:
+YY_RULE_SETUP
+#line 49 "b.l"
+{return STOP; }
+	YY_BREAK
+case 36:
+YY_RULE_SETUP
+#line 50 "b.l"
+{return SEMICOLON; }
+	YY_BREAK
+case 37:
+YY_RULE_SETUP
+#line 51 "b.l"
+{return COMMA; printf("JKk");}
+	YY_BREAK
+case 38:
+YY_RULE_SETUP
+#line 53 "b.l"
+{return IF; }
+	YY_BREAK
+case 39:
+YY_RULE_SETUP
+#line 54 "b.l"
+{return THEN; }
+	YY_BREAK
+case 40:
+YY_RULE_SETUP
+#line 55 "b.l"
+{return LET; }
+	YY_BREAK
+case 41:
+YY_RULE_SETUP
+#line 56 "b.l"
+{return INPUT; }
+	YY_BREAK
+case 42:
+YY_RULE_SETUP
+#line 57 "b.l"
+{ printf("Invalidcharacter %c\n", *yytext); }
+	YY_BREAK
+case 43:
+YY_RULE_SETUP
+#line 58 "b.l"
+ECHO;
+	YY_BREAK
+#line 999 "lex.yy.c"
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1999,14 +2227,24 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
+<<<<<<< HEAD
 #line 55 "test.l"
+=======
+#line 58 "b.l"
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 
 
 int yywrap() {
     return 1;
 }
 
+<<<<<<< HEAD
 int main(int argc, char *argv[]) {
+=======
+/* int main(){
+    yylex();
+} */
+>>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
 
     yyin = fopen(argv[1], "r");
     yylex();

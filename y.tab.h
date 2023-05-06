@@ -54,26 +54,51 @@ extern int yydebug;
     YYEOF = 0,                     /* "end of file"  */
     YYerror = 256,                 /* error  */
     YYUNDEF = 257,                 /* "invalid token"  */
-    NUMBER = 258,                  /* NUMBER  */
-    IDENTIFIER = 259,              /* IDENTIFIER  */
-    PLUS = 260,                    /* PLUS  */
-    MINUS = 261,                   /* MINUS  */
-    TIMES = 262,                   /* TIMES  */
-    DIVIDE = 263,                  /* DIVIDE  */
-    ASSIGN = 264,                  /* ASSIGN  */
-    IF = 265,                      /* IF  */
-    THEN = 266,                    /* THEN  */
-    ELSE = 267,                    /* ELSE  */
-    LBRACE = 268,                  /* LBRACE  */
-    RBRACE = 269,                  /* RBRACE  */
-    LPAREN = 270,                  /* LPAREN  */
-    RPAREN = 271,                  /* RPAREN  */
-    EQ = 272,                      /* EQ  */
-    NEQ = 273,                     /* NEQ  */
-    LT = 274,                      /* LT  */
-    GT = 275,                      /* GT  */
-    LE = 276,                      /* LE  */
-    GE = 277                       /* GE  */
+    LET = 258,                     /* LET  */
+    NUMBER = 259,                  /* NUMBER  */
+    IDENTIFIER = 260,              /* IDENTIFIER  */
+    NOT = 261,                     /* NOT  */
+    AND = 262,                     /* AND  */
+    OR = 263,                      /* OR  */
+    XOR = 264,                     /* XOR  */
+    DATA = 265,                    /* DATA  */
+    DEF = 266,                     /* DEF  */
+    FN = 267,                      /* FN  */
+    DIM = 268,                     /* DIM  */
+    END = 269,                     /* END  */
+    FOR = 270,                     /* FOR  */
+    TO = 271,                      /* TO  */
+    NEXT = 272,                    /* NEXT  */
+    GOSUB = 273,                   /* GOSUB  */
+    GOTO = 274,                    /* GOTO  */
+    IF = 275,                      /* IF  */
+    THEN = 276,                    /* THEN  */
+    INPUT = 277,                   /* INPUT  */
+    PRINT = 278,                   /* PRINT  */
+    REM = 279,                     /* REM  */
+    RETURN = 280,                  /* RETURN  */
+    STOP = 281,                    /* STOP  */
+    STEP = 282,                    /* STEP  */
+    PLUS = 283,                    /* PLUS  */
+    MINUS = 284,                   /* MINUS  */
+    MULTIPLY = 285,                /* MULTIPLY  */
+    DIVIDE = 286,                  /* DIVIDE  */
+    EQUALS = 287,                  /* EQUALS  */
+    NOT_EQUAL = 288,               /* NOT_EQUAL  */
+    LESS = 289,                    /* LESS  */
+    LESS_EQUAL = 290,              /* LESS_EQUAL  */
+    GREATER = 291,                 /* GREATER  */
+    GREATER_EQUAL = 292,           /* GREATER_EQUAL  */
+    COMMA = 293,                   /* COMMA  */
+    SEMICOLON = 294,               /* SEMICOLON  */
+    LPAREN = 295,                  /* LPAREN  */
+    RPAREN = 296,                  /* RPAREN  */
+    EXPO = 297,                    /* EXPO  */
+    NEGATION = 298,                /* NEGATION  */
+    INTEGER = 299,                 /* INTEGER  */
+    DOUBLE = 300,                  /* DOUBLE  */
+    STRING = 301,                  /* STRING  */
+    SINGLE = 302                   /* SINGLE  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -82,26 +107,51 @@ extern int yydebug;
 #define YYEOF 0
 #define YYerror 256
 #define YYUNDEF 257
-#define NUMBER 258
-#define IDENTIFIER 259
-#define PLUS 260
-#define MINUS 261
-#define TIMES 262
-#define DIVIDE 263
-#define ASSIGN 264
-#define IF 265
-#define THEN 266
-#define ELSE 267
-#define LBRACE 268
-#define RBRACE 269
-#define LPAREN 270
-#define RPAREN 271
-#define EQ 272
-#define NEQ 273
-#define LT 274
-#define GT 275
-#define LE 276
-#define GE 277
+#define LET 258
+#define NUMBER 259
+#define IDENTIFIER 260
+#define NOT 261
+#define AND 262
+#define OR 263
+#define XOR 264
+#define DATA 265
+#define DEF 266
+#define FN 267
+#define DIM 268
+#define END 269
+#define FOR 270
+#define TO 271
+#define NEXT 272
+#define GOSUB 273
+#define GOTO 274
+#define IF 275
+#define THEN 276
+#define INPUT 277
+#define PRINT 278
+#define REM 279
+#define RETURN 280
+#define STOP 281
+#define STEP 282
+#define PLUS 283
+#define MINUS 284
+#define MULTIPLY 285
+#define DIVIDE 286
+#define EQUALS 287
+#define NOT_EQUAL 288
+#define LESS 289
+#define LESS_EQUAL 290
+#define GREATER 291
+#define GREATER_EQUAL 292
+#define COMMA 293
+#define SEMICOLON 294
+#define LPAREN 295
+#define RPAREN 296
+#define EXPO 297
+#define NEGATION 298
+#define INTEGER 299
+#define DOUBLE 300
+#define STRING 301
+#define SINGLE 302
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
