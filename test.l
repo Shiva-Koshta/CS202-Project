@@ -3,6 +3,7 @@ identifier [A-Z][0-9]?
 Wrongidentifier " "[A-Z]+[0-9]{2,}
 %{
 #include "y.tab.h"
+int count = 0;
 %}
 
 %%
@@ -53,7 +54,7 @@ Wrongidentifier " "[A-Z]+[0-9]{2,}
 "THEN"                   {printf ("THEN\t"); }
 "LET"                    {printf ("LET\t"); }
 "INPUT"                  {printf ("INPUT\t"); }
-\"([A-Z0-9]|\s)*\"       {printf("STRING_LITERAL");}
+\"([A-Z0-9]+|" ")*\"       {printf("STRING_LITERAL");}
 .                         {printf("INVALID CHARACTER\t");}
 %%
 

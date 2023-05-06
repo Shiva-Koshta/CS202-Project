@@ -57,7 +57,7 @@ extern int yylval;
 "$"                     {return STRING; }
 "!"                     {return SINGLE; }
 "%"                     {return INTEGER; }
-\"([A-Z0-9]|\s)*\"      {return STRING_LITERAL;}
+\"([A-Z0-9]|" ")*\"      {return STRING_LITERAL;}
 .                       { yyerror("Invalid Character\n"); }
 %%
 

@@ -91,13 +91,17 @@ Modifier: INTEGER
         | SINGLE
         ;
 
-PrintStmt: PRINT Printparts
+PrintStmt: PRINT Printparts 
+        | PRINT Printparts SEMICOLON
+        | PRINT Printparts COMMA
         | PRINT
         ;
 
-Printparts: Expression
+Printparts: Expression 
+        | Expression 
 
-        |STRING_LITERAL
+        |STRING_LITERAL 
+        |STRING_LITERAL 
 
         | Printparts SEMICOLON Expression
         | Printparts COMMA Expression
