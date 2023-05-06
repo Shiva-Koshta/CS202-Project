@@ -1,13 +1,15 @@
 
 %{
 #include "y.tab.h"
+FILE *file;
 %}
 
 %%
 [ \t]                   /* Ignore whitespace */
 \n                      /* Ignore newlines */
+
 [0-9]+                  { printf ("NUMBER\n"); }
-[A-Z][a-z]*([0-9]?|[0-9]{1})\b   { printf("Match found: %s\n", yytext); }
+{[A-Z][0-9]?}           { printf("Match found: %s\n", yytext); }
 
 "("                     { printf ("LPAREN\n"); }
 ")"                     { printf ("RPAREN\n"); }
@@ -56,6 +58,12 @@ int yywrap() {
     return 1;
 }
 
-int main(){
+int main(int argc, char *argv[]) {
+
+    yyin = fopen(argv[1], "r");
     yylex();
+    fclose(yyin);
+
+    printf("\n");
+
 }

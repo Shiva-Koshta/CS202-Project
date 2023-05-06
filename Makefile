@@ -3,6 +3,8 @@ all:
 	# lex b.l
 	# cc lex.yy.c y.tab.c -o bminus
 	# ./bminus
-	# lex a.l
-	# cc lex.yy.c -o l
-	# ./l
+	lex test.l
+	cc lex.yy.c -o fof -ll
+	./l input.txt
+
+
