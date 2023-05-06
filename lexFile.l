@@ -1,4 +1,4 @@
-
+identifier \s[A-Z][0-9]?\b
 %{
 #include "y.tab.h"
 #include <stdio.h>
@@ -8,16 +8,8 @@ extern int yylval;
 %%
 [ \t]                   /* Ignore whitespace */
 \n                      /* Ignore newlines */
-<<<<<<< HEAD
-[0-9]+                  { yylval.num = atoi(yytext); return NUMBER; }
-[A-Z]([0-9])?           { yylval.id = strdup(yytext); return IDENTIFIER; }
-=======
-[0-9]+                  { yylval = atoi(yytext); return NUMBER; }
-
-
-
-
->>>>>>> 7e90ad33620f4b334599535b087ae9229d25cedd
+[0-9]+                  { return NUMBER; }
+{identifier}            {return IDENTIFIER; }
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "^"                     {return EXPO;}
@@ -59,6 +51,11 @@ extern int yylval;
 "THEN"                   {return THEN; }
 "LET"                    {return LET; }
 "INPUT"                  {return INPUT; }
+"#"                     {return DOUBLE; }
+"$"                     {return STRING; }
+"!"                     {return SINGLE; }
+"%"                     {return INTEGER; }
+\"([A-Z0-9]|\s)*\"         {return STRING_LITERAL;}
 .                         { printf("Invalidcharacter %c\n", *yytext); }
 %%
 
