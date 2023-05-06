@@ -12,8 +12,8 @@ FILE *file;
 {identifier}            { printf("Match found: %s\n", yytext);}
 "("                     { printf ("LPAREN\n"); }
 ")"                     { printf ("RPAREN\n"); }
-"^"                     {printf ("EXPO\n");}
-"~"                     {printf ("NEGATION\n");}
+"^"                     { printf ("EXPO\n");}
+"~"                     { printf ("NEGATION\n");}
 "+"                     { printf ("PLUS\n"); }
 "-"                     { printf ("MINUS\n"); }
 "*"                     { printf ("MULTIPLY\n"); }
@@ -29,28 +29,28 @@ FILE *file;
 "OR"                    { printf ("OR\n"); }
 "XOR"                   { printf ("XOR\n"); }
 "DATA"                  { printf ("DATA\n"); }
-"DEF"                    { printf ("DEF\n"); }
-"DIM"                    { printf ("DIM\n"); }
-"END"                    { printf ("END\n"); }
-"FOR"                    { printf ("FOR\n"); }
-"TO"                     {printf ("TO\n"); }
-"STEP"                   {printf ("STEP\n"); }
-"NEXT"                   {printf ("NEXT\n"); }
-"GOSUB"                  {printf ("GOSUB\n"); }
-"GOTO"                   {printf ("GOTO\n"); }
+"DEF"                   { printf ("DEF\n"); }
+"DIM"                   { printf ("DIM\n"); }
+"END"                   { printf ("END\n"); }
+"FOR"                   { printf ("FOR\n"); }
+"TO"                    { printf ("TO\n"); }
+"STEP"                  { printf ("STEP\n"); }
+"NEXT"                  { printf ("NEXT\n"); }
+"GOSUB"                 { printf ("GOSUB\n"); }
+"GOTO"                  { printf ("GOTO\n"); }
 
 
-"PRINT"                  {printf ("PRINT\n"); }
-"REM"                    {printf ("REM\n"); }
-"STOP"                   {printf ("STOP\n"); }
-";"                      {printf ("SEMICOLON\n"); }
-","                      {printf ("COMMA\n");}
+"PRINT"                 { printf ("PRINT\n"); }
+"REM"                   { printf ("REM\n"); }
+"STOP"                  { printf ("STOP\n"); }
+";"                     { printf ("SEMICOLON\n"); }
+","                     { printf ("COMMA\n");}
 
-"IF"                     {printf ("IF\n"); }
-"THEN"                   {printf ("THEN\n"); }
-"LET"                    {printf ("LET\n"); }
-"INPUT"                  {printf ("INPUT\n"); }
-.                        {printf("Invalidcharacter %c\n", *yytext); }
+"IF"                    { printf ("IF\n"); }
+"THEN"                  { printf ("THEN\n"); }
+"LET"                   { printf ("LET\n"); }
+"INPUT"                 { printf ("INPUT\n"); }
+.                       { printf("Invalidcharacter %c\n", *yytext); }
 %%
 
 int yywrap() {
