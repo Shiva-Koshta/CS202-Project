@@ -1,12 +1,14 @@
 
 %{
 #include "y.tab.h"
+#include <stdio.h>
+extern int yylval;
 %}
 
 %%
 [ \t]                   /* Ignore whitespace */
 \n                      /* Ignore newlines */
-[0-9]+                  { yylval.num = atoi(yytext); return NUMBER; }
+[0-9]+                  { yylval = atoi(yytext); return NUMBER; }
 
 
 
@@ -52,13 +54,13 @@
 "THEN"                   {return THEN; }
 "LET"                    {return LET; }
 "INPUT"                  {return INPUT; }
-.                         { print("Invalidcharacter %c\n", *yytext); }
+.                         { printf("Invalidcharacter %c\n", *yytext); }
 %%
 
 int yywrap() {
     return 1;
 }
 
-int main(){
-    yylexer();
-}
+/* int main(){
+    yylex();
+} */

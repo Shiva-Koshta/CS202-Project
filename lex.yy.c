@@ -500,8 +500,10 @@ char *yytext;
 #line 1 "b.l"
 #line 3 "b.l"
 #include "y.tab.h"
-#line 504 "lex.yy.c"
-#line 505 "lex.yy.c"
+#include <stdio.h>
+extern int yylval;
+#line 506 "lex.yy.c"
+#line 507 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -718,9 +720,9 @@ YY_DECL
 		}
 
 	{
-#line 6 "b.l"
+#line 8 "b.l"
 
-#line 724 "lex.yy.c"
+#line 726 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -779,221 +781,221 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 7 "b.l"
+#line 9 "b.l"
 /* Ignore whitespace */
 	YY_BREAK
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 8 "b.l"
+#line 10 "b.l"
 /* Ignore newlines */
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 9 "b.l"
-{ yylval.num = atoi(yytext); return NUMBER; }
+#line 11 "b.l"
+{ yylval = atoi(yytext); return NUMBER; }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 14 "b.l"
+#line 16 "b.l"
 { return LPAREN; }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 15 "b.l"
+#line 17 "b.l"
 { return RPAREN; }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 16 "b.l"
+#line 18 "b.l"
 {return EXPO;}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 17 "b.l"
+#line 19 "b.l"
 {return NEGATION;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 18 "b.l"
+#line 20 "b.l"
 { return PLUS; }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 19 "b.l"
+#line 21 "b.l"
 { return MINUS; }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 20 "b.l"
+#line 22 "b.l"
 { return MULTIPLY; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 21 "b.l"
+#line 23 "b.l"
 { return DIVIDE; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 22 "b.l"
+#line 24 "b.l"
 { return EQUALS; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 23 "b.l"
+#line 25 "b.l"
 { return NOT_EQUAL; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 24 "b.l"
+#line 26 "b.l"
 { return LESS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 25 "b.l"
+#line 27 "b.l"
 { return GREATER; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 26 "b.l"
+#line 28 "b.l"
 { return LESS_EQUAL; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 27 "b.l"
+#line 29 "b.l"
 { return GREATER_EQUAL; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 28 "b.l"
+#line 30 "b.l"
 { return NOT; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 29 "b.l"
+#line 31 "b.l"
 { return AND; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 30 "b.l"
+#line 32 "b.l"
 { return OR; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 31 "b.l"
+#line 33 "b.l"
 { return XOR; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 32 "b.l"
+#line 34 "b.l"
 { return DATA; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 33 "b.l"
+#line 35 "b.l"
 { return DEF; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 34 "b.l"
+#line 36 "b.l"
 { return DIM; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 35 "b.l"
+#line 37 "b.l"
 { return END; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 36 "b.l"
+#line 38 "b.l"
 { return FOR; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 37 "b.l"
+#line 39 "b.l"
 {return TO; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 38 "b.l"
+#line 40 "b.l"
 {return STEP; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 39 "b.l"
+#line 41 "b.l"
 {return NEXT; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 40 "b.l"
+#line 42 "b.l"
 {return GOSUB; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 41 "b.l"
+#line 43 "b.l"
 {return GOTO; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 44 "b.l"
+#line 46 "b.l"
 {return PRINT; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 45 "b.l"
+#line 47 "b.l"
 {return REM; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 46 "b.l"
+#line 48 "b.l"
 {return RETURN; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 47 "b.l"
+#line 49 "b.l"
 {return STOP; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 48 "b.l"
+#line 50 "b.l"
 {return SEMICOLON; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 49 "b.l"
+#line 51 "b.l"
 {return COMMA; printf("JKk");}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 51 "b.l"
+#line 53 "b.l"
 {return IF; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 52 "b.l"
+#line 54 "b.l"
 {return THEN; }
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 53 "b.l"
+#line 55 "b.l"
 {return LET; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 54 "b.l"
+#line 56 "b.l"
 {return INPUT; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 55 "b.l"
-{ print("Invalidcharacter %c\n", *yytext); }
+#line 57 "b.l"
+{ printf("Invalidcharacter %c\n", *yytext); }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 56 "b.l"
+#line 58 "b.l"
 ECHO;
 	YY_BREAK
-#line 997 "lex.yy.c"
+#line 999 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1998,14 +2000,14 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 56 "b.l"
+#line 58 "b.l"
 
 
 int yywrap() {
     return 1;
 }
 
-int main(){
-    yylexer();
-}
+/* int main(){
+    yylex();
+} */
 
