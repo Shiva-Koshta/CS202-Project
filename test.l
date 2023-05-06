@@ -1,4 +1,4 @@
-
+identifier [A-Z][0-9]? 
 %{
 #include "y.tab.h"
 FILE *file;
@@ -9,8 +9,7 @@ FILE *file;
 \n                      /* Ignore newlines */
 
 [0-9]+                  { printf ("NUMBER\n"); }
-{[A-Z][0-9]?}           { printf("Match found: %s\n", yytext); }
-
+{identifier}            { printf("Match found: %s\n", yytext);}
 "("                     { printf ("LPAREN\n"); }
 ")"                     { printf ("RPAREN\n"); }
 "^"                     {printf ("EXPO\n");}
