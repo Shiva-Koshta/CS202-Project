@@ -7,10 +7,7 @@
 [ \t]                   /* Ignore whitespace */
 \n                      /* Ignore newlines */
 [0-9]+                  { yylval.num = atoi(yytext); return NUMBER; }
-
-
-
-
+[A-Z]([0-9])?           { yylval.id = strdup(yytext); return IDENTIFIER; }
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "^"                     {return EXPO;}
@@ -45,8 +42,8 @@
 "REM"                    {return REM; }
 "RETURN"                 {return RETURN; }
 "STOP"                   {return STOP; }
-"SEMICOLON"              {return SEMICOLON; }
-","                      {return COMMA; printf("JKk");}
+";"                      {return SEMICOLON; }
+","                      {return COMMA;}
 
 "IF"                     {return IF; }
 "THEN"                   {return THEN; }
