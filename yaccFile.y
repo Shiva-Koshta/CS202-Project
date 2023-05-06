@@ -3,10 +3,11 @@
 #include <stdio.h>
 void yyerror(const char* message);
 int yylex();
+extern FILE *yyin;
 
 %}
 
-%token LET NUMBER IDENTIFIER NOT AND OR XOR DATA DEF FN DIM END FOR TO NEXT GOSUB GOTO IF THEN INPUT PRINT REM RETURN STOP STEP PLUS MINUS MULTIPLY DIVIDE EQUALS NOT_EQUAL LESS LESS_EQUAL GREATER GREATER_EQUAL COMMA SEMICOLON LPAREN RPAREN EXPO  INTEGER DOUBLE STRING SINGLE STRING_LITERAL 
+%token LET NUMBER IDENTIFIER NOT AND OR XOR DATA DEF FN DIM END FOR TO NEXT GOSUB GOTO IF THEN INPUT PRINT RETURN STOP STEP PLUS MINUS MULTIPLY DIVIDE EQUALS NOT_EQUAL LESS LESS_EQUAL GREATER GREATER_EQUAL COMMA SEMICOLON LPAREN RPAREN EXPO INTEGER DOUBLE STRING SINGLE STRING_LITERAL 
 
 %%
 //rule here
@@ -114,6 +115,12 @@ StopStmt: STOP
 
 Expression: IDENTIFIER
         | NUMBER
+
+        | Expression AND Expression
+        | Expression OR Expression
+        | Expression XOR Expression
+        | NOT Expression
+
         | Expression PLUS Expression
         | Expression MINUS Expression
         | Expression MULTIPLY Expression
@@ -142,9 +149,18 @@ Relational_Expression: NUMBER
         ;
 %%
 
-int main()
+/* int main()
 {
 	yyparse();
+} */
+int main(int argc, char *argv[]) {
+
+    yyin = fopen(argv[1], "r");
+    yyparse();
+    fclose(yyin);
+
+    printf("\n");
+
 }
 
 void yyerror(const char* message)

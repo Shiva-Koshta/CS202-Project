@@ -1,7 +1,8 @@
 all:
 
-	lex test.l
-	cc lex.yy.c -o fof -ll
+	yacc -d yaccFile.y
+	lex lexFile.l
+	cc lex.yy.c y.tab.c -o OUTPUT 
 	# ./fof 
 
-	./fof input.txt
+	./OUTPUT input.txt

@@ -1,5 +1,5 @@
 identifier [A-Z][0-9]?
-wrongidentifier " "[A-Z]*[0-9]{2,}
+wrongidentifier " "[A-Z]+[0-9]{2,}
 %{
 #include "y.tab.h"
 #include <stdio.h>
@@ -9,6 +9,7 @@ extern int yylval;
 %%
 [ \t]                   /* Ignore whitespace */
 \n                      /* Ignore newlines */
+[0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/]*(" ")*)*  
 [0-9]+                  { return NUMBER; }
 {identifier}            {return IDENTIFIER; }
 {wrongidentifier}       {yyerror("Invalid Identifier");}
@@ -43,7 +44,6 @@ extern int yylval;
 
 
 "PRINT"                  {return PRINT; }
-"REM"                    {return REM; }
 "RETURN"                 {return RETURN; }
 "STOP"                   {return STOP; }
 ";"                      {return SEMICOLON; }

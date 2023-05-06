@@ -75,30 +75,29 @@ extern int yydebug;
     THEN = 276,                    /* THEN  */
     INPUT = 277,                   /* INPUT  */
     PRINT = 278,                   /* PRINT  */
-    REM = 279,                     /* REM  */
-    RETURN = 280,                  /* RETURN  */
-    STOP = 281,                    /* STOP  */
-    STEP = 282,                    /* STEP  */
-    PLUS = 283,                    /* PLUS  */
-    MINUS = 284,                   /* MINUS  */
-    MULTIPLY = 285,                /* MULTIPLY  */
-    DIVIDE = 286,                  /* DIVIDE  */
-    EQUALS = 287,                  /* EQUALS  */
-    NOT_EQUAL = 288,               /* NOT_EQUAL  */
-    LESS = 289,                    /* LESS  */
-    LESS_EQUAL = 290,              /* LESS_EQUAL  */
-    GREATER = 291,                 /* GREATER  */
-    GREATER_EQUAL = 292,           /* GREATER_EQUAL  */
-    COMMA = 293,                   /* COMMA  */
-    SEMICOLON = 294,               /* SEMICOLON  */
-    LPAREN = 295,                  /* LPAREN  */
-    RPAREN = 296,                  /* RPAREN  */
-    EXPO = 297,                    /* EXPO  */
-    NEGATION = 298,                /* NEGATION  */
-    INTEGER = 299,                 /* INTEGER  */
-    DOUBLE = 300,                  /* DOUBLE  */
-    STRING = 301,                  /* STRING  */
-    SINGLE = 302                   /* SINGLE  */
+    RETURN = 279,                  /* RETURN  */
+    STOP = 280,                    /* STOP  */
+    STEP = 281,                    /* STEP  */
+    PLUS = 282,                    /* PLUS  */
+    MINUS = 283,                   /* MINUS  */
+    MULTIPLY = 284,                /* MULTIPLY  */
+    DIVIDE = 285,                  /* DIVIDE  */
+    EQUALS = 286,                  /* EQUALS  */
+    NOT_EQUAL = 287,               /* NOT_EQUAL  */
+    LESS = 288,                    /* LESS  */
+    LESS_EQUAL = 289,              /* LESS_EQUAL  */
+    GREATER = 290,                 /* GREATER  */
+    GREATER_EQUAL = 291,           /* GREATER_EQUAL  */
+    COMMA = 292,                   /* COMMA  */
+    SEMICOLON = 293,               /* SEMICOLON  */
+    LPAREN = 294,                  /* LPAREN  */
+    RPAREN = 295,                  /* RPAREN  */
+    EXPO = 296,                    /* EXPO  */
+    INTEGER = 297,                 /* INTEGER  */
+    DOUBLE = 298,                  /* DOUBLE  */
+    STRING = 299,                  /* STRING  */
+    SINGLE = 300,                  /* SINGLE  */
+    STRING_LITERAL = 301           /* STRING_LITERAL  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -128,30 +127,29 @@ extern int yydebug;
 #define THEN 276
 #define INPUT 277
 #define PRINT 278
-#define REM 279
-#define RETURN 280
-#define STOP 281
-#define STEP 282
-#define PLUS 283
-#define MINUS 284
-#define MULTIPLY 285
-#define DIVIDE 286
-#define EQUALS 287
-#define NOT_EQUAL 288
-#define LESS 289
-#define LESS_EQUAL 290
-#define GREATER 291
-#define GREATER_EQUAL 292
-#define COMMA 293
-#define SEMICOLON 294
-#define LPAREN 295
-#define RPAREN 296
-#define EXPO 297
-#define NEGATION 298
-#define INTEGER 299
-#define DOUBLE 300
-#define STRING 301
-#define SINGLE 302
+#define RETURN 279
+#define STOP 280
+#define STEP 281
+#define PLUS 282
+#define MINUS 283
+#define MULTIPLY 284
+#define DIVIDE 285
+#define EQUALS 286
+#define NOT_EQUAL 287
+#define LESS 288
+#define LESS_EQUAL 289
+#define GREATER 290
+#define GREATER_EQUAL 291
+#define COMMA 292
+#define SEMICOLON 293
+#define LPAREN 294
+#define RPAREN 295
+#define EXPO 296
+#define INTEGER 297
+#define DOUBLE 298
+#define STRING 299
+#define SINGLE 300
+#define STRING_LITERAL 301
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

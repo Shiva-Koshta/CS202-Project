@@ -1,14 +1,15 @@
 identifier [A-Z][0-9]?
 
-Wrongidentifier " "[A-Z]*[0-9]{2,}
+Wrongidentifier " "[A-Z]+[0-9]{2,}
 %{
 #include "y.tab.h"
-FILE *file;
 %}
 
 %%
 [ \t]                   /* Ignore whitespace */
-[0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/]*(" ")*)*       
+
+[0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/]*(" ")*)*  
+
 [0-9]+                  { printf ("NUMBER\t"); }
 {identifier}            {printf("IDENTIFIER\t"); }
 {Wrongidentifier}       {printf("Invalid input\t"); }
