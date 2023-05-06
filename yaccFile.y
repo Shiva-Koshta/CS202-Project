@@ -67,21 +67,27 @@ AssignStmt: LET Assign
         ;
 Assign: IDENTIFIER EQUALS Expression
         | IDENTIFIER STRING EQUALS STRING_LITERAL
-        | IDENTIFIER INTEGER EQUALS NUMBER
-        | IDENTIFIER DOUBLE EQUALS NUMBER
-        | IDENTIFIER SINGLE EQUALS NUMBER
+        | IDENTIFIER INTEGER EQUALS Expression
+        | IDENTIFIER DOUBLE EQUALS Expression
+        | IDENTIFIER SINGLE EQUALS Expression
 
-        | IDENTIFIER LPAREN NUMBER RPAREN EQUALS NUMBER
-        | IDENTIFIER LPAREN NUMBER COMMA NUMBER RPAREN EQUALS NUMBER
+        | IDENTIFIER LPAREN Expression RPAREN EQUALS Expression
+        | IDENTIFIER LPAREN Expression COMMA Expression RPAREN EQUALS Expression
         ;
 
 InputStmt: INPUT InputArgs
         ;
 
 InputArgs: IDENTIFIER [Modifier]
-        | IDENTIFIER LPAREN NUMBER RPAREN 
-        | IDENTIFIER LPAREN NUMBER COMMA NUMBER RPAREN
+        | IDENTIFIER LPAREN Expression RPAREN 
+        | IDENTIFIER LPAREN Expression COMMA Expression RPAREN
         | InputArgs COMMA InputArgs
+        ;
+
+Modifier: INTEGER
+        | DOUBLE
+        | STRING
+        | SINGLE
         ;
 
 PrintStmt: PRINT Printparts
@@ -97,7 +103,6 @@ Printparts: Expression
 
         | Printparts SEMICOLON STRING_LITERAL
         | Printparts COMMA STRING_LITERAL
-        
         ;
 
 ReturnStmt: RETURN
@@ -106,11 +111,6 @@ ReturnStmt: RETURN
 StopStmt: STOP
         ;
 
-Modifier: INTEGER
-        | DOUBLE
-        | STRING
-        | SINGLE
-        ;
 
 Expression: IDENTIFIER
         | NUMBER
@@ -125,25 +125,21 @@ Expression: IDENTIFIER
 
 Relational_Expression: NUMBER
         | IDENTIFIER
-        |STRING_LITERAL
 
         | Relational_Expression EQUALS Relational_Expression
         | Relational_Expression NOT_EQUAL Relational_Expression
 
+        | STRING_LITERAL EQUALS STRING_LITERAL
+        | STRING_LITERAL NOT_EQUAL STRING_LITERAL
+        
         | Relational_Expression LESS Relational_Expression
         | Relational_Expression LESS_EQUAL Relational_Expression
 
         | Relational_Expression GREATER Relational_Expression
         | Relational_Expression GREATER_EQUAL Relational_Expression
 
-        | NOT Relational_Expression
-        | Relational_Expression AND Relational_Expression
-        | Relational_Expression OR Relational_Expression
-        | Relational_Expression XOR Relational_Expression
-
         | LPAREN Relational_Expression RPAREN
         ;
-
 %%
 
 int main()
