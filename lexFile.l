@@ -15,7 +15,7 @@ extern int yylval;
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "^"                     {return EXPO;}
-"~"                     {return NEGATION;}
+
 "+"                     { return PLUS; }
 "-"                     { return MINUS; }
 "*"                     { return MULTIPLY; }
@@ -26,7 +26,7 @@ extern int yylval;
 ">"                     { return GREATER; }
 "<="                    { return LESS_EQUAL; }
 ">="                    { return GREATER_EQUAL; }
-"NOT"                   { return NOT; }
+"~"                   { return NOT; }
 "AND"                   { return AND; }
 "OR"                    { return OR; }
 "XOR"                   { return XOR; }
