@@ -6,3 +6,5 @@ all:
 	# ./fof 
 
 	./OUTPUT input.txt
+clean: 
+	rm lex.yy.c y.tab.c y.tab.h OUTPUT

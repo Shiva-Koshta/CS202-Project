@@ -9,7 +9,9 @@ int count = 0;
 %%
 [ \t]                   /* Ignore whitespace */
 
-[0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/]*(" ")*)*  
+[0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/]*(" ")*)*\n 
+
+\n                      {printf ("EOL\t");}
 
 [0-9]+                  { printf ("NUMBER\t"); }
 {identifier}            {printf("IDENTIFIER\t"); }
@@ -49,13 +51,18 @@ int count = 0;
 "STOP"                   {printf ("STOP\t"); }
 ";"                      {printf ("SEMICOLON\t"); }
 ","                      {printf ("COMMA\t");}
+"#"                     {printf("Double"); }
+"$"                     {printf ("STRING"); }
+"!"                     {printf ("SINGLE"); }
+"%"                     {printf("INTEGER"); }
 
-"IF"                     {printf ("IF\t"); }
+
+"IF"                     {printf ("IF \t"); }
 "THEN"                   {printf ("THEN\t"); }
 "LET"                    {printf ("LET\t"); }
 "INPUT"                  {printf ("INPUT\t"); }
-\"([A-Z0-9]+|" ")*\"       {printf("STRING_LITERAL");}
-.                         {printf("INVALID CHARACTER\t");}
+\"([A-Z0-9]+|" ")*\"     {printf("STRING_LITERAL\t");}
+.                        {printf("INVALID CHARACTER\t");}
 %%
 
 int yywrap() {

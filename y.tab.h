@@ -97,7 +97,8 @@ extern int yydebug;
     DOUBLE = 298,                  /* DOUBLE  */
     STRING = 299,                  /* STRING  */
     SINGLE = 300,                  /* SINGLE  */
-    STRING_LITERAL = 301           /* STRING_LITERAL  */
+    STRING_LITERAL = 301,          /* STRING_LITERAL  */
+    EOL = 302                      /* EOL  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -150,6 +151,7 @@ extern int yydebug;
 #define STRING 299
 #define SINGLE 300
 #define STRING_LITERAL 301
+#define EOL 302
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
