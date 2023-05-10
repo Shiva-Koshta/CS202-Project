@@ -3,3 +3,7 @@ what to do:
 2. P1# (double precision), N$ (string), A9 (integer), M! (single precision) {Integer is the default}
 3. KeyWords : NOT, AND, OR, XOR, DATA, DEF FNx, DIM, END, FOR, TO, NEXT, GOSUB, GOTO, IF, THEN, INPUT, PRINT, REM, RETURN, STOP, STEP
 4.
+
+
+ForStmt : ForStmt: "FOR" IDENTIFIER "=" Expression "TO" Expression "STEP" Expression EOL StmtList "NEXT" IDENTIFIER
+| "FOR" IDENTIFIER "=" Expression "TO" Expression EOL StmtList "NEXT" IDENTIFIER

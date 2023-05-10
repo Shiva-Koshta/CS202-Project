@@ -31,6 +31,7 @@ Stmt: AssignStmt EOL
     | DefStmt EOL
     | ForStmt EOL 
     | DataStmt EOL
+    | NextStmt EOL
     | EndStmt 
     ;
 
@@ -55,8 +56,11 @@ EndStmt: END EOL
         | END
         ;
 
-ForStmt: FOR IDENTIFIER EQUALS Expression TO Expression STEP Expression EOL StmtList NEXT IDENTIFIER
-        | FOR IDENTIFIER EQUALS Expression TO Expression EOL StmtList NEXT IDENTIFIER
+ForStmt: FOR IDENTIFIER EQUALS Expression TO Expression STEP Expression 
+        | FOR IDENTIFIER EQUALS Expression TO Expression 
+        ;
+
+NextStmt: NEXT IDENTIFIER
         ;
 
 GosubStmt: GOSUB NUMBER
@@ -119,7 +123,7 @@ StopStmt: STOP
         ;
 
 
-Expression: IDENTIFIER
+Expression: IDENTIFIER 
         | NUMBER
 
         | Expression AND Expression
@@ -140,6 +144,8 @@ Relational_Expression: NUMBER
         |STRING_LITERAL
         | IDENTIFIER
         | IDENTIFIER Modifier
+        |IDENTIFIER LPAREN Expression RPAREN
+        |IDENTIFIER LPAREN Expression COMMA Expression RPAREN
 
         | Relational_Expression EQUALS Relational_Expression
         | Relational_Expression NOT_EQUAL Relational_Expression
@@ -180,5 +186,5 @@ int main(int argc, char *argv[]) {
 void yyerror(const char* message)
 {
 	printf("ERROR : %s\n", message);
-        printf ("the line no is=%d", count);
+        printf ("Error in line No.: %d", count);
 }

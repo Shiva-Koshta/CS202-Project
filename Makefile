@@ -2,9 +2,8 @@ all:
 
 	yacc -d yaccFile.y
 	lex lexFile.l
-	cc lex.yy.c y.tab.c -o OUTPUT 
-	# ./fof 
+	cc lex.yy.c y.tab.c -o OUTPUT
 
-	./OUTPUT input.txt
+	./OUTPUT CorrectSample.bmm
 clean: 
 	rm lex.yy.c y.tab.c y.tab.h OUTPUT
