@@ -125,6 +125,9 @@ StopStmt: STOP
 
 Expression: IDENTIFIER 
         | NUMBER
+        | IDENTIFIER LPAREN Expression RPAREN
+        | FN IDENTIFIER LPAREN Expression RPAREN
+        | FN IDENTIFIER 
 
         | Expression AND Expression
         | Expression OR Expression
@@ -186,5 +189,5 @@ int main(int argc, char *argv[]) {
 void yyerror(const char* message)
 {
 	printf("ERROR : %s\n", message);
-        printf ("Error in line No.: %d", count);
+        printf ("Error in line No.: %d", count+1);
 }

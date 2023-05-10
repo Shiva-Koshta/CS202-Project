@@ -13,9 +13,10 @@ int count = 0;
 
 \n                      {printf ("EOL\t");}
 
-[0-9]+                  { printf ("NUMBER\t"); }
+[0-9]+("."[0-9]+)?      { printf ("NUMBER\t"); }
 {identifier}            {printf("IDENTIFIER\t"); }
 {Wrongidentifier}       {printf("Invalid input\t"); }
+"FN"                   { printf ("FN\t"); }
 "("                     { printf ("LPAREN\t"); }
 ")"                     { printf ("RPAREN\t"); }
 "^"                     {printf ("EXPO\t");}

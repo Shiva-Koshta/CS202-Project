@@ -11,7 +11,7 @@ int count = 0;
 [ \t]                   /* Ignore whitespace */
 \n                      {count++; return EOL;}
 [0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/\(\)\!\@\#\$\%\^\&\_\?\{\}\[\]\:\;\.\"\"\<\>]*(" ")*)*\n {count ++;}
-[0-9]+                  { return NUMBER; }
+[0-9]+("."[0-9]+)?                  { return NUMBER; }
 {identifier}            {return IDENTIFIER; }
 {wrongidentifier}       {yyerror("Invalid Identifier");}
 "("                     { return LPAREN; }
@@ -42,7 +42,7 @@ int count = 0;
 "NEXT"                   {return NEXT; }
 "GOSUB"                  {return GOSUB; }
 "GOTO"                   {return GOTO; }
-
+"FN"                     {return FN; }
 
 "PRINT"                  {return PRINT; }
 "RETURN"                 {return RETURN; }
