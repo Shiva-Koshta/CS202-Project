@@ -4,9 +4,9 @@ wrongidentifier " "[A-Z]+[0-9]{2,}
 #include "y.tab.h"
 #include <stdio.h>
 extern int yylval;
+// extern int yylineno;
 int count = 0;
 %}
-
 %%
 [ \t]                   /* Ignore whitespace */
 \n                      {count++; return EOL;}
@@ -17,7 +17,6 @@ int count = 0;
 "("                     { return LPAREN; }
 ")"                     { return RPAREN; }
 "^"                     {return EXPO;}
-
 "+"                     { return PLUS; }
 "-"                     { return MINUS; }
 "*"                     { return MULTIPLY; }
@@ -43,13 +42,11 @@ int count = 0;
 "GOSUB"                  {return GOSUB; }
 "GOTO"                   {return GOTO; }
 "FN"                     {return FN; }
-
 "PRINT"                  {return PRINT; }
 "RETURN"                 {return RETURN; }
 "STOP"                   {return STOP; }
 ";"                      {return SEMICOLON; }
 ","                      {return COMMA;}
-
 "IF"                     {return IF; }
 "THEN"                   {return THEN; }
 "LET"                    {return LET; }
@@ -59,11 +56,10 @@ int count = 0;
 "!"                     {return SINGLE; }
 "%"                     {return INTEGER; }
 \"(.)*\"      {return STRING_LITERAL;}
-.                       { yyerror("Invalid Character\n"); }
+.                       { yyerror("Invalid Character"); return SMALLcHAR;}
 %%
 
 int yywrap() {
     return 1;
 }
-
 

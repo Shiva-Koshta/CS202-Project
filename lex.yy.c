@@ -523,9 +523,10 @@ char *yytext;
 #include "y.tab.h"
 #include <stdio.h>
 extern int yylval;
+// extern int yylineno;
 int count = 0;
-#line 528 "lex.yy.c"
 #line 529 "lex.yy.c"
+#line 530 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -744,7 +745,7 @@ YY_DECL
 	{
 #line 10 "lexFile.l"
 
-#line 748 "lex.yy.c"
+#line 749 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -850,210 +851,210 @@ YY_RULE_SETUP
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "lexFile.l"
+#line 20 "lexFile.l"
 { return PLUS; }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 22 "lexFile.l"
+#line 21 "lexFile.l"
 { return MINUS; }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "lexFile.l"
+#line 22 "lexFile.l"
 { return MULTIPLY; }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 24 "lexFile.l"
+#line 23 "lexFile.l"
 { return DIVIDE; }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 25 "lexFile.l"
+#line 24 "lexFile.l"
 { return EQUALS; }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 26 "lexFile.l"
+#line 25 "lexFile.l"
 { return NOT_EQUAL; }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 27 "lexFile.l"
+#line 26 "lexFile.l"
 { return LESS; }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 28 "lexFile.l"
+#line 27 "lexFile.l"
 { return GREATER; }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 29 "lexFile.l"
+#line 28 "lexFile.l"
 { return LESS_EQUAL; }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 30 "lexFile.l"
+#line 29 "lexFile.l"
 { return GREATER_EQUAL; }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 31 "lexFile.l"
+#line 30 "lexFile.l"
 { return NOT; }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 32 "lexFile.l"
+#line 31 "lexFile.l"
 { return AND; }
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 33 "lexFile.l"
+#line 32 "lexFile.l"
 { return OR; }
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 34 "lexFile.l"
+#line 33 "lexFile.l"
 { return XOR; }
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 35 "lexFile.l"
+#line 34 "lexFile.l"
 { return DATA; }
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 36 "lexFile.l"
+#line 35 "lexFile.l"
 { return DEF; }
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 37 "lexFile.l"
+#line 36 "lexFile.l"
 { return DIM; }
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 38 "lexFile.l"
+#line 37 "lexFile.l"
 { return END; }
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 39 "lexFile.l"
+#line 38 "lexFile.l"
 { return FOR; }
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 40 "lexFile.l"
+#line 39 "lexFile.l"
 {return TO; }
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
-#line 41 "lexFile.l"
+#line 40 "lexFile.l"
 {return STEP; }
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
-#line 42 "lexFile.l"
+#line 41 "lexFile.l"
 {return NEXT; }
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 43 "lexFile.l"
+#line 42 "lexFile.l"
 {return GOSUB; }
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 44 "lexFile.l"
+#line 43 "lexFile.l"
 {return GOTO; }
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
-#line 45 "lexFile.l"
+#line 44 "lexFile.l"
 {return FN; }
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
-#line 47 "lexFile.l"
+#line 45 "lexFile.l"
 {return PRINT; }
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 48 "lexFile.l"
+#line 46 "lexFile.l"
 {return RETURN; }
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 49 "lexFile.l"
+#line 47 "lexFile.l"
 {return STOP; }
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
-#line 50 "lexFile.l"
+#line 48 "lexFile.l"
 {return SEMICOLON; }
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
-#line 51 "lexFile.l"
+#line 49 "lexFile.l"
 {return COMMA;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 53 "lexFile.l"
+#line 50 "lexFile.l"
 {return IF; }
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 54 "lexFile.l"
+#line 51 "lexFile.l"
 {return THEN; }
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
-#line 55 "lexFile.l"
+#line 52 "lexFile.l"
 {return LET; }
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
-#line 56 "lexFile.l"
+#line 53 "lexFile.l"
 {return INPUT; }
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 57 "lexFile.l"
+#line 54 "lexFile.l"
 {return DOUBLE; }
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
-#line 58 "lexFile.l"
+#line 55 "lexFile.l"
 {return STRING; }
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
-#line 59 "lexFile.l"
+#line 56 "lexFile.l"
 {return SINGLE; }
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 60 "lexFile.l"
+#line 57 "lexFile.l"
 {return INTEGER; }
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
-#line 61 "lexFile.l"
+#line 58 "lexFile.l"
 {return STRING_LITERAL;}
 	YY_BREAK
 case 49:
 YY_RULE_SETUP
-#line 62 "lexFile.l"
-{ yyerror("Invalid Character\n"); }
+#line 59 "lexFile.l"
+{ yyerror("Invalid Character"); return SMALLcHAR;}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 63 "lexFile.l"
+#line 60 "lexFile.l"
 ECHO;
 	YY_BREAK
-#line 1057 "lex.yy.c"
+#line 1058 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -2058,12 +2059,11 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 63 "lexFile.l"
+#line 60 "lexFile.l"
 
 
 int yywrap() {
     return 1;
 }
-
 
 

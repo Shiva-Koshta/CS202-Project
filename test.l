@@ -8,11 +8,8 @@ int count = 0;
 
 %%
 [ \t]                   /* Ignore whitespace */
-
 [0-9]+(" ")+"REM"(" ")*([A-Z0-9=,\*\+\-\/]*(" ")*)*\n 
-
 \n                      {printf ("EOL\t");}
-
 [0-9]+("."[0-9]+)?      { printf ("NUMBER\t"); }
 {identifier}            {printf("IDENTIFIER\t"); }
 {Wrongidentifier}       {printf("Invalid input\t"); }
@@ -45,10 +42,8 @@ int count = 0;
 "NEXT"                   {printf ("NEXT\t"); }
 "GOSUB"                  {printf ("GOSUB\t"); }
 "GOTO"                   {printf ("GOTO\t"); }
-
-
+"FN"                    {printf ("FN\t"); }
 "PRINT"                  {printf ("PRINT\t"); }
-
 "STOP"                   {printf ("STOP\t"); }
 ";"                      {printf ("SEMICOLON\t"); }
 ","                      {printf ("COMMA\t");}
@@ -56,8 +51,6 @@ int count = 0;
 "$"                     {printf ("STRING"); }
 "!"                     {printf ("SINGLE"); }
 "%"                     {printf("INTEGER"); }
-
-
 "IF"                     {printf ("IF \t"); }
 "THEN"                   {printf ("THEN\t"); }
 "LET"                    {printf ("LET\t"); }
